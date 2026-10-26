@@ -1,0 +1,35 @@
+\Needspace{12\baselineskip}
+\section{Off-Policy GRPO and Custom Estimator}
+\label{sec:off-policy}
+
+\problem{derive\_surrogate\_objectives}{Derive surrogate objectives for importance reweighting}{2 points}
+Derive the surrogate objective optimized by the pairwise token reweighting estimator.
+\deliverable{An expression and derivation.}\answer
+
+\problem{compute\_policy\_gradient\_loss\_off\_policy}{Off-policy policy gradient with token-level reweighting}{1 point}
+Implement no-clipping and PPO/GRPO-clipped token-level importance reweighting.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{think\_about\_importance\_reweighting}{Think about importance reweighting}{2 points}
+Compare no reweighting, clipped token-level reweighting, and clipped sequence-level reweighting in terms of bias and variance.
+\deliverable{A few sentences of commentary.}\answer
+
+\problem{compute\_policy\_gradient\_loss\_off\_policy\_gspo}{Off-policy policy gradient with sequence-level reweighting}{1 point}
+Implement GSPO geometric-mean sequence-level importance weighting and clipping.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{grpo\_train\_step\_off\_policy}{Off-policy GRPO train step}{2.5 points}
+Extend the GRPO train step to support the off-policy reweighting arguments.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{grpo\_experiments\_off\_policy}{Compare off-policy algorithms}{10 points}
+Compare naive off-policy updates, no clipping, token-level clipping, and GSPO with four seeds.
+\deliverable{Plots and commentary on performance, stability, clip fraction, variance, and tuning.}
+\resultfigure{Insert off-policy metric and clip-fraction plots.}{Off-policy GRPO experiment results.}
+\answer
+
+\problem{try\_your\_own}{Try your own policy-gradient estimator}{10 points}
+Propose and evaluate an estimator that changes one component relative to an assignment baseline, using multiple seeds.
+\deliverable{Motivation, comparison plots, and a discussion of whether the estimator beats the baselines.}
+\resultfigure{Insert custom-estimator comparison plots.}{Custom policy-gradient estimator results.}
+\answer

@@ -1,0 +1,21 @@
+\Needspace{12\baselineskip}
+\section{Standard On-Policy GRPO Experiments}
+\label{sec:on-policy-experiments}
+
+\problem{grpo\_experiments\_standard\_on\_policy}{Standard on-policy GRPO}{10 points}
+Train OLMo-2-0425-1B on GSM8K with four seeds and report learning curves and representative rollouts.
+\deliverable{Commentary, plots for requested metrics, run-to-run variation, and rollout examples.}
+\resultfigure{Insert training and validation metric plots.}{Standard on-policy GRPO learning curves.}
+\answer
+
+\problem{grpo\_learning\_rate}{Tune the learning rate}{3 points}
+Compare final validation reward across learning rates using the prescribed seeds and setup.
+\deliverable{A plot of final validation reward versus learning rate and a short discussion.}
+\resultfigure{Insert learning-rate sweep plot.}{Validation reward by learning rate.}
+\answer
+
+\problem{grpo\_prompt\_ablation}{Prompt ablation}{3 points}
+Compare R1-Zero, question-only, and three-shot R1-Zero prompts for GRPO.
+\deliverable{Plots and commentary comparing training behavior and final performance.}
+\resultfigure{Insert prompt-ablation plots.}{Prompt ablation results.}
+\answer

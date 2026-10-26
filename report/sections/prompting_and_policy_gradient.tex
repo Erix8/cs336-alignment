@@ -1,0 +1,24 @@
+\Needspace{12\baselineskip}
+\section{Prompting and Policy-Gradient Analysis}
+\label{sec:prompting-policy-gradient}
+
+\problem{prompting\_baselines}{Run OLMo-2-0425-1B on GSM8K}{5 points}
+Compare question-only, zero-shot R1-Zero, and three-shot R1-Zero prompting. Report metrics and representative generations.
+\deliverable{Metrics, brief commentary, and examples of model responses.}
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}lrrr@{}}\toprule
+Prompt & Accuracy & Format rate & Mean response length \\\midrule
+Question-only & & & \\
+R1-Zero, zero-shot & & & \\
+R1-Zero, three-shot & & & \\
+\bottomrule\end{tabular}
+\caption{GSM8K prompting baselines.}\label{tab:prompting-baselines}\end{table}
+\answer
+
+\problem{baseline\_calcs}{Compute the variance of the policy-gradient estimator}{5 points}
+\partquestion{a}{Derive the variance of the unadjusted estimator for the Bernoulli policy.}
+\deliverable{An expression in $n$ and $p$, with derivation.}\answer
+\partquestion{b}{Derive the variance with a constant baseline $b$.}
+\deliverable{An expression in $n$, $b$, and $p$, with derivation and discussion.}\answer
+\partquestion{c}{Set $b=p$ and compare the variance with the unadjusted estimator.}
+\deliverable{The resulting variance and whether it is always lower, always higher, or depends on $p$.}\answer

@@ -1,0 +1,41 @@
+\Needspace{12\baselineskip}
+\section{On-Policy Algorithm Variants}
+\label{sec:algorithm-variants}
+
+\problem{think\_about\_length\_normalization}{Think about length normalization}{1 point}
+Discuss the effect of sequence-level versus constant normalization, including how response length can affect learning.
+\deliverable{A few sentences of discussion.}\answer
+
+\problem{compute\_group\_normalized\_rewards\_drgrpo}{Dr. GRPO group normalization}{0.5 points}
+Implement the Dr. GRPO reward/advantage normalization variant.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{aggregate\_loss\_across\_microbatch\_constant}{Dr. GRPO loss aggregation}{0.5 points}
+Implement constant normalization across tokens and microbatches.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{think\_about\_rft}{Think about RFT}{2 points}
+Explain how rejection fine-tuning relates to the policy-gradient estimators and when it may work well.
+\deliverable{A short conceptual discussion.}\answer
+
+\problem{derive\_difficulty\_reweightings}{Derive difficulty reweightings induced by different advantage normalizers}{6 points}
+Derive how RFT, GRPO, Dr. GRPO, and MaxRL weight prompts of different difficulty.
+\deliverable{Expressions and interpretation for the requested estimator variants.}\answer
+
+\problem{think\_about\_advantage\_normalization}{Think about advantage normalization}{2 points}
+Discuss the consequences of normalizing advantages by the within-group standard deviation.
+\deliverable{A few sentences of discussion.}\answer
+
+\problem{compute\_group\_normalized\_rewards\_maxrl}{MaxRL group normalization}{0.5 points}
+Implement the MaxRL reward/advantage variant.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{grpo\_train\_step\_variants\_on\_policy}{On-policy GRPO train-step variants}{2.5 points}
+Extend the train step to support the assignment's on-policy algorithm variants.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{grpo\_experiments\_variants\_on\_policy}{Compare on-policy RL variants}{10 points}
+Compare RFT, GRPO variants, and MaxRL on GSM8K using the prescribed runs.
+\deliverable{Commentary supported by plots and a discussion of variation between runs.}
+\resultfigure{Insert requested variant metric plots.}{On-policy policy-gradient variant results.}
+\answer

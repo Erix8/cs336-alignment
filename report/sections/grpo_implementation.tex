@@ -1,0 +1,31 @@
+\Needspace{12\baselineskip}
+\section{GRPO Components and Training Step}
+\label{sec:grpo-implementation}
+
+\problem{tokenize\_prompt\_and\_output}{Prompt and output tokenization}{1 point}
+Implement prompt/output tokenization, padding, and response masks.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{get\_response\_log\_probs}{Response log-probs and entropy}{1 point}
+Compute per-token response log probabilities and, when requested, entropy.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{compute\_rollout\_rewards}{Computing rollout rewards}{1 point}
+Compute total, format, and answer rewards for generated responses.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{compute\_group\_normalized\_rewards\_grpo}{GRPO group normalization}{1 point}
+Normalize rewards within each prompt group using the standard GRPO convention.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{compute\_policy\_gradient\_loss\_on\_policy}{On-policy policy gradient}{1 point}
+Implement the on-policy policy-gradient loss with the specified token/sequence normalization.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{aggregate\_loss\_across\_microbatch\_sequence}{Aggregate loss across tokens and sequences}{0.5 points}
+Aggregate per-token losses by averaging within each sequence and then across sequences.
+\deliverable{Implementation summary and the required validation result.}\answer
+
+\problem{grpo\_train\_step\_standard\_on\_policy}{Standard on-policy GRPO train step}{5 points}
+Connect rollout generation, reward computation, loss calculation, gradient accumulation, and optimizer update.
+\deliverable{Implementation summary and evidence that the train step is correct.}\answer

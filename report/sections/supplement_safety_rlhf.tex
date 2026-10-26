@@ -1,0 +1,91 @@
+\Needspace{12\baselineskip}
+\section{Supplement: Safety and RLHF}
+\label{sec:supplement}
+
+\subsection{Zero-Shot Baselines}
+\problem{mmlu\_baseline}{Zero-shot MMLU baseline}{4 points}
+\partquestion{a}{Implement a parser that extracts a multiple-choice answer letter.}\deliverable{Parser implementation and required validation result.}\answer
+\partquestion{b}{Implement the Llama 3.1 8B zero-shot MMLU evaluation script.}\deliverable{Evaluation script.}\answer
+\partquestion{c}{Report failed parses and representative examples.}\deliverable{Failure count and examples when applicable.}\answer
+\partquestion{d}{Report generation throughput.}\deliverable{Examples per second.}\answer
+\partquestion{e}{Report baseline MMLU performance.}\deliverable{Evaluation metrics.}\answer
+\partquestion{f}{Analyze ten incorrectly predicted examples.}\deliverable{A short error analysis with examples.}\answer
+
+\problem{gsm8k\_baseline}{Zero-shot GSM8K baseline}{4 points}
+\partquestion{a}{Implement a parser for the final numeric prediction.}\deliverable{Parser implementation and required validation result.}\answer
+\partquestion{b}{Implement the Llama 3.1 8B zero-shot GSM8K evaluation script.}\deliverable{Evaluation script.}\answer
+\partquestion{c}{Report failed parses and representative examples.}\deliverable{Failure count and examples when applicable.}\answer
+\partquestion{d}{Report generation throughput.}\deliverable{Examples per second.}\answer
+\partquestion{e}{Report baseline GSM8K performance.}\deliverable{Evaluation metrics.}\answer
+\partquestion{f}{Analyze ten incorrectly predicted examples.}\deliverable{A short error analysis with examples.}\answer
+
+\problem{alpaca\_eval\_baseline}{Zero-shot AlpacaEval baseline}{4 points}
+\partquestion{a}{Implement generation and JSON serialization for AlpacaEval.}\deliverable{Generation script.}\answer
+\partquestion{b}{Report generation throughput.}\deliverable{Examples per second.}\answer
+\partquestion{c}{Report winrate and length-controlled winrate against GPT-4 Turbo.}\deliverable{Evaluation metrics.}\answer
+\partquestion{d}{Analyze ten dispreferred examples and the evaluator judgments.}\deliverable{A short error analysis.}\answer
+
+\problem{sst\_baseline}{Zero-shot SimpleSafetyTests baseline}{4 points}
+\partquestion{a}{Implement prediction generation for SimpleSafetyTests.}\deliverable{Generation script.}\answer
+\partquestion{b}{Report generation throughput.}\deliverable{Examples per second.}\answer
+\partquestion{c}{Report safe-output proportion.}\deliverable{Metric and comparison when available.}\answer
+\partquestion{d}{Analyze ten outputs judged unsafe.}\deliverable{A short error analysis.}\answer
+
+\subsection{Instruction-Tuning Data and Training}
+\problem{look\_at\_sft}{Inspect instruction-tuning data}{4 points}
+Summarize the dataset's sources, format, example structure, and observed data quality.
+\deliverable{A concise description supported by representative examples.}\answer
+
+\problem{data\_loading}{Implement data loading}{3 points}
+\partquestion{a}{Implement the packed instruction-tuning Dataset.}\deliverable{Dataset implementation and required validation result.}\answer
+\partquestion{b}{Implement batching over the packed Dataset.}\deliverable{Batching implementation and required validation result.}\answer
+
+\problem{sft\_script}{Instruction-tuning training script}{4 points}
+Implement the configurable training loop, validation/logging, gradient accumulation, and checkpoint saving.
+\deliverable{Training script.}\answer
+
+\problem{sft}{Instruction tuning}{6 points}
+Train Llama 3.1 8B for the specified setup and report validation loss and learning curve.
+\deliverable{Training configuration, final validation loss, learning curve, and model/tokenizer location.}
+\resultfigure{Insert SFT training and validation loss curve.}{Instruction-tuning learning curve.}
+\answer
+
+\subsection{Evaluating the Instruction-Tuned Model}
+\problem{mmlu\_sft}{Evaluate SFT on MMLU}{4 points}
+\partquestion{a}{Report throughput and compare it with the zero-shot baseline.}\deliverable{Throughput and comparison.}\answer
+\partquestion{b}{Report MMLU performance and compare it with baseline.}\deliverable{Metrics and comparison.}\answer
+\partquestion{c}{Analyze ten incorrect predictions and qualitative changes.}\deliverable{A short error analysis.}\answer
+
+\problem{gsm8k\_sft}{Evaluate SFT on GSM8K}{4 points}
+\partquestion{a}{Report throughput and compare it with the zero-shot baseline.}\deliverable{Throughput and comparison.}\answer
+\partquestion{b}{Report GSM8K performance and compare it with baseline.}\deliverable{Metrics and comparison.}\answer
+\partquestion{c}{Analyze ten incorrect predictions and qualitative changes.}\deliverable{A short error analysis.}\answer
+
+\problem{alpaca\_eval\_sft}{Evaluate SFT on AlpacaEval}{4 points}
+\partquestion{a}{Report throughput and compare it with the zero-shot baseline.}\deliverable{Throughput and comparison.}\answer
+\partquestion{b}{Report winrate and length-controlled winrate against GPT-4 Turbo.}\deliverable{Metrics and comparison.}\answer
+\partquestion{c}{Analyze ten dispreferred outputs and evaluator judgments.}\deliverable{A short error analysis.}\answer
+
+\problem{sst\_sft}{Evaluate SFT on SimpleSafetyTests}{4 points}
+\partquestion{a}{Report throughput and compare it with the zero-shot baseline.}\deliverable{Throughput and comparison.}\answer
+\partquestion{b}{Report the safe-output proportion and compare it with baseline.}\deliverable{Metric and comparison.}\answer
+\partquestion{c}{Analyze ten outputs judged unsafe.}\deliverable{A short error analysis.}\answer
+
+\problem{red\_teaming}{Red-team the instruction-tuned model}{4 points}
+\partquestion{a}{Give three additional potential misuse cases.}\deliverable{Three examples.}\answer
+\partquestion{b}{Describe methodology and results for three red-team attempts.}\deliverable{A short description for each application.}\answer
+
+\subsection{Preference Data and DPO}
+\problem{look\_at\_hh}{Inspect HH preference data}{2 points}
+\partquestion{a}{Load and process the four HH preference datasets.}\deliverable{Loader implementation.}\answer
+\partquestion{b}{Compare chosen and rejected responses in sampled helpful and harmless examples.}\deliverable{A short discussion, including agreement with labels.}\answer
+
+\problem{dpo\_loss}{DPO loss}{2 points}
+Implement per-instance DPO loss with the prescribed prompt formatting and EOS handling.
+\deliverable{Loss implementation and required validation result.}\answer
+
+\problem{dpo\_training}{DPO training}{4 points}
+\partquestion{a}{Implement and run DPO training; select the checkpoint by validation accuracy.}\deliverable{Training script, checkpoint, and validation-accuracy evidence.}\answer
+\partquestion{b}{Report DPO AlpacaEval winrates and compare with SFT.}\deliverable{Metrics and comparison.}\answer
+\partquestion{c}{Report SimpleSafetyTests results and compare with SFT.}\deliverable{Metrics and comparison.}\answer
+\partquestion{d}{Report GSM8K and MMLU results and discuss any alignment tax.}\deliverable{A short evaluation discussion.}\answer
